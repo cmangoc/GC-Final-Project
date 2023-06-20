@@ -1,4 +1,4 @@
-<google-map (mapClick)="click($event)"
+<google-map (mapClick)="click($event); addNewItem(currentLat); addNewItem(currentLng)"
   height="500px"
   width="100%"
   [zoom]="zoom"
@@ -9,10 +9,4 @@
 
 <button (click)="zoomIn()">Zoom in</button>
 <button (click)="zoomOut()">Zoom out</button>
-<button (click)="currentPos()">Current Coords</button>
-
-<div>
-  <p>info</p>
-  <p>{{currentLat}}</p>
-  <p>{{currentLng}}</p>
-</div>
+<button (click)="currentPos(); addNewItem(currentLat); addNewItem(currentLng)">Current Coords</button>

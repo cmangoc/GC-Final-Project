@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { GolfFinderService } from '../golf-finder.service';
 import { GolfDetailsService } from '../golf-details.service';
 
@@ -8,8 +8,8 @@ import { GolfDetailsService } from '../golf-details.service';
   styleUrls: ['./golf-course-finder.component.css']
 })
 export class GolfCourseFinderComponent {
-  latitude: number | null = null;
-  longitude: number | null = null;
+  @Input() latitude: number | null | undefined = undefined;
+  @Input() longitude: number | null | undefined = undefined;
   radius: number | null = null;
   golfCourses: any[] = []; // Array to store the retrieved golf courses
   selectedCourseDetails: any = null; // Variable to store the selected course details

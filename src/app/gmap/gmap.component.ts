@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
@@ -7,8 +7,16 @@ import { GoogleMapsModule } from '@angular/google-maps';
   styleUrls: ['./gmap.component.css']
 })
 export class GmapComponent implements GoogleMapsModule, OnInit {
-  currentLat: number | undefined;
-  currentLng!: number | undefined;
+  currentLat!: number;
+  currentLng!: number;
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: any) {
+    this.newItemEvent.emit(value.toString());
+  }
+
+
 
   zoom = 12;
   center!: google.maps.LatLngLiteral;
@@ -26,9 +34,14 @@ export class GmapComponent implements GoogleMapsModule, OnInit {
   
   click(event: google.maps.MapMouseEvent) {
     console.log(event.latLng?.lat());
-    this.currentLat = event.latLng?.lat();
+    if (event.latLng?.lat() != null){
+      this.currentLat = event.latLng.lat();
+    }
+    if (event.latLng?.lng() != null){
+      this.currentLng = event.latLng.lng();
+    }
     console.log(event.latLng?.lng());
-    this.currentLng = event.latLng?.lng();
+    
   }
   
   ngOnInit(): void {

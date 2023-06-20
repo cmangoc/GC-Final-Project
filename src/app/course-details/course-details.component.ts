@@ -26,10 +26,10 @@ export class CourseDetailsComponent implements OnInit {
   getCourseDetails() {
     if (this.zip && this.name) {
       this.golfDetailsService.getCourseDetails(this.zip, this.name).subscribe(
-        (response) => {
+        (response: any) => {
           this.courseDetails = response.course_details.result;
         },
-        (error) => {
+        (error: any) => {
           console.log('Error fetching course details:', error);
         }
       );

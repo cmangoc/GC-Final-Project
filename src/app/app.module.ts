@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { GmapComponent } from './gmap/gmap.component';
 import { GolfCourseFinderComponent } from './golf-course-finder/golf-course-finder.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
   { path: '', component: GolfCourseFinderComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     AppComponent,
     GmapComponent,
     GolfCourseFinderComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
