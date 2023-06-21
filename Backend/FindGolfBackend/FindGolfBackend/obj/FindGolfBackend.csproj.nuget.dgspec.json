@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj": {}
+    "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\fuzzy-octo-winner\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj": {
+    "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\fuzzy-octo-winner\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj",
+        "projectUniqueName": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\fuzzy-octo-winner\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj",
         "projectName": "FindGolfBackend",
-        "projectPath": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj",
+        "projectPath": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\fuzzy-octo-winner\\Backend\\FindGolfBackend\\FindGolfBackend\\FindGolfBackend.csproj",
         "packagesPath": "C:\\Users\\bowha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\Backend\\FindGolfBackend\\FindGolfBackend\\obj\\",
+        "outputPath": "C:\\Users\\bowha\\Desktop\\FINAL PROJECT\\fuzzy-octo-winner\\Backend\\FindGolfBackend\\FindGolfBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bowha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "RestSharp": {
               "target": "Package",
               "version": "[110.2.0, )"
@@ -47,6 +55,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             }
           },
           "imports": [
