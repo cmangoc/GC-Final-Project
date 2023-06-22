@@ -35,7 +35,7 @@ namespace FindGolfBackend.Services
 
     public async Task<string> GetCourseDetails(string zip, string name)
     {
-      string apiPath = _configuration["GolfCourseFinder:CourseDetailsApiPath"];
+      string apiPath = _configuration["GolfCourseFinder:ApiPathCourseDetails"];
       string requestUri = $"{apiPath}?zip={zip}&name={name}";
 
       var response = await _httpClient.GetAsync(requestUri);
@@ -43,5 +43,7 @@ namespace FindGolfBackend.Services
 
       return await response.Content.ReadAsStringAsync();
     }
+
+
   }
 }

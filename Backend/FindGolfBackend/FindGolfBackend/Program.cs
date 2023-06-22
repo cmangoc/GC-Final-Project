@@ -16,6 +16,7 @@ namespace FindGolfBackend
 
       // Add services to the container.
       builder.Services.AddScoped<IGolfFinderService, GolfFinderService>();
+      builder.Services.AddScoped<IGolfDetailsService, GolfDetailsService>();
 
       builder.Services.AddControllers();
       builder.Services.AddHttpClient<GolfFinderService>(client =>

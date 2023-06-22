@@ -17,7 +17,7 @@ namespace FindGolfBackend.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetCourseDetails(string zip, string name)
+    public async Task<IActionResult> GetCourseDetails([FromQuery] string zip, [FromQuery] string name)
     {
       try
       {
@@ -30,5 +30,6 @@ namespace FindGolfBackend.Controllers
         return StatusCode(500, $"An error occurred while retrieving golf course details: {ex.Message}");
       }
     }
+
   }
 }
