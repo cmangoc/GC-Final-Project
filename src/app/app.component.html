@@ -1,1 +1,9 @@
-<app-main-page></app-main-page>
+
+<div class="row card" style="position:fixed;padding-left:1px;padding-right:16px; z-index: 99 !important; background-color: white;">
+    <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>
+    <a routerLink="">Home</a>
+    <p style="color: white;">----</p>
+    <a routerLink="/login">Account</a>
+</div>
+
+<router-outlet></router-outlet>
