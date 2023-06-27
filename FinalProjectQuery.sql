@@ -17,5 +17,5 @@
 --CREATE TABLE Reviews(
 --  id INT PRIMARY KEY IDENTITY(1,1),
 --  review NVARCHAR(300),
---  CourseId INT FOREIGN KEY REFERENCES Courses(id)
+--  CourseId INT FOREIGN KEY REFERENCES [User](id)
 --);

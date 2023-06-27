@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace FindGolfBackend.Models;
@@ -10,4 +10,6 @@ public partial class User
     public string? Name { get; set; }
 
     public string? Email { get; set; }
+
+    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 }
