@@ -35,6 +35,17 @@ namespace FindGolfBackend
       builder.Services.AddEndpointsApiExplorer();
       builder.Services.AddSwaggerGen();
 
+      builder.Services.AddCors(options =>
+      {
+        options.AddDefaultPolicy(
+            builder =>
+            {
+              builder.WithOrigins("http://localhost:4200/")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+            });
+      });
+
       var app = builder.Build();
 
       if (app.Environment.IsDevelopment())
@@ -46,6 +57,8 @@ namespace FindGolfBackend
           c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
         });
       }
+
+      app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
       app.UseHttpsRedirection();
 

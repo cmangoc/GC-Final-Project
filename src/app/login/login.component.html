@@ -1,10 +1,12 @@
-
-
-
-
-<img src="{{ user.photoUrl }}" referrerpolicy="no-referrer">
-<div>
-  <h4>{{ user.name }}</h4>
-  <p>{{ user.email }}</p>
+<br/>
+<br/>
+<br/>
+<div *ngIf="user.name != undefined">
+  <img src="{{ user.photoUrl }}" referrerpolicy="no-referrer">
+  <div>
+    <h4>{{ user.name }}</h4>
+    <p>{{ user.email }}</p>
+  </div>
+  
+  <button (click)="checkDBForUser()">Save Account</button>
 </div>
-

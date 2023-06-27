@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -94,6 +94,27 @@ namespace FindGolfBackend.Controllers
 
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
+
+        //[HttpPost]
+        //public async Task<ActionResult<User>> CheckUserLogin(User user)
+        //{
+        //  if (_context.Users == null)
+        //  {
+        //      return Problem("Entity set 'FinalProjectDbContext.Users'  is null.");
+        //  }
+        //  if (_context.Users.Contains(user))
+        //  {
+        //      return Problem("Already Exists in database");
+              
+        //  }
+          
+        //      _context.Users.Add(user);
+        //      await _context.SaveChangesAsync();
+
+        //       return CreatedAtAction("GetUser", new { id = user.Id }, user);
+          
+            
+        //}
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
