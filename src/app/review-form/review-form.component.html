@@ -1,0 +1,26 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<div *ngIf="loggedIn">
+  <form (ngSubmit)="reloadUsers(); searchForUser(); submitForm()" #reviewForm="ngForm">
+    <div>
+      <label for="courseName">Golf Course Name:</label>
+      <input type="text" id="courseName" name="courseName" [(ngModel)]="review.courseName" required>
+    </div>
+    <div>
+      <label for="zipCode">Zip Code:</label>
+      <input type="text" id="zipCode" name="zipCode" [(ngModel)]="review.zipCode" required>
+    </div>
+    <div>
+      <label for="reviewContent">Review:</label>
+      <textarea id="reviewContent" name="reviewContent" [(ngModel)]="review.reviewContent" required></textarea>
+    </div>
+    <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+  </form>
+</div>
+<div *ngIf="!loggedIn">
+  <h4>Please use a valid account to create reviews</h4>
+</div>
+  
+  

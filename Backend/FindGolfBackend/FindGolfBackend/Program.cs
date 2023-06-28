@@ -60,6 +60,10 @@ namespace FindGolfBackend
 
       app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
+      app.UseDefaultFiles();
+      app.UseStaticFiles();
+
+
       app.UseHttpsRedirection();
 
       app.UseRouting();

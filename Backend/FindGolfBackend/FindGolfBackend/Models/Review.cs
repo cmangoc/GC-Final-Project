@@ -9,7 +9,11 @@ public partial class Review
 
     public string? Review1 { get; set; }
 
-    public int? CourseId { get; set; }
+    public string? CourseName { get; set; }
+
+    public string? zipCode { get; set; }
+
+    public int? UserId { get; set; }
 
     public virtual User? User { get; set; }
 }

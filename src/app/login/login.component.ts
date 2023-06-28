@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
+      this.reloadUsers();
     });
-    this.reloadUsers();
   }
   
   reloadUsers(){

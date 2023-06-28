@@ -2,11 +2,10 @@
 --USE FinalProjectDB
 
 --CREATE TABLE [User](
---	id INT PRIMARY KEY IDENTITY(1,1),
---	[Name] NVARCHAR(50),
+--    id INT PRIMARY KEY IDENTITY(1,1),
+--    [Name] NVARCHAR(50),
 --  email NVARCHAR(255)
 --);
-
 
 --CREATE TABLE Courses(
 --  id INT PRIMARY KEY IDENTITY(1,1),
@@ -17,5 +16,7 @@
 --CREATE TABLE Reviews(
 --  id INT PRIMARY KEY IDENTITY(1,1),
 --  review NVARCHAR(300),
---  CourseId INT FOREIGN KEY REFERENCES [User](id)
+--  CourseName NVARCHAR (255),
+--  ZipCode NVARCHAR (5),
+--  UserId INT FOREIGN KEY REFERENCES [User](id)
 --);

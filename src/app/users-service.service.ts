@@ -10,7 +10,7 @@ import { User } from './user';
 })
 export class UsersService {
   
-  private readonly API_URL = 'https://localhost:7060/api/Users';
+  private readonly API_URL = 'https://birdiebuddy.azurewebsites.net/api/Users';
 
   constructor(private http: HttpClient) { }
 
