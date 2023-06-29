@@ -10,8 +10,7 @@
 <button (click)="findGolfCourses()">Find Golf Courses</button>
 
 <h2>Golf Courses:</h2>
-<ul>
-  <li *ngFor="let course of golfCourses">
+  <div *ngFor="let course of golfCourses" class="card">
     <strong>Name:</strong> {{ course.name }}<br>
     <strong>Zip:</strong> {{ course.zip }}<br>
     <strong>Distance:</strong> {{ course.distance }}<br>
@@ -45,5 +44,4 @@
         </li>
       </ul>
     </div>
-  </li>
-</ul>
+  </div>

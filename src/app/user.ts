@@ -8,6 +8,7 @@ export interface User {
     id?:    number;
     name:  string;
     email: string;
+    reviews?: any[];
 }
 
 // Converts JSON strings to/from your types

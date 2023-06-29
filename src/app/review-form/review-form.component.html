@@ -2,25 +2,71 @@
 <br/>
 <br/>
 <br/>
-<div *ngIf="loggedIn">
-  <form (ngSubmit)="reloadUsers(); searchForUser(); submitForm()" #reviewForm="ngForm">
-    <div>
-      <label for="courseName">Golf Course Name:</label>
-      <input type="text" id="courseName" name="courseName" [(ngModel)]="review.courseName" required>
-    </div>
-    <div>
-      <label for="zipCode">Zip Code:</label>
-      <input type="text" id="zipCode" name="zipCode" [(ngModel)]="review.zipCode" required>
-    </div>
-    <div>
-      <label for="reviewContent">Review:</label>
-      <textarea id="reviewContent" name="reviewContent" [(ngModel)]="review.reviewContent" required></textarea>
-    </div>
-    <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
-  </form>
+<button *ngIf="!formBool" (click)="expandForm()">Expand New Review Form</button>
+<div *ngIf="formBool">
+  <button (click)="expandForm()">Hide New Review Form</button>
+  <div *ngIf="loggedIn">
+    <form (ngSubmit)="reloadUsers(); searchForUser(); getReviews(); submitForm()" #reviewForm="ngForm">
+      <div>
+        <label for="courseName">Golf Course Name:</label>
+        <br/>
+        <input type="text" id="courseName" name="courseName" [(ngModel)]="review.courseName" required>
+      </div>
+      <div>
+        <label for="zipCode">Zip Code:</label>
+        <br/>
+        <input type="text" id="zipCode" name="zipCode" [(ngModel)]="review.zipCode" required>
+      </div>
+      <div>
+        <label for="review1">Review:</label>
+        <br/>
+        <textarea id="review1" name="review1" [(ngModel)]="review.review1" required></textarea>
+      </div>
+      <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="!loggedIn">
+    <h4>Please use a valid account to create reviews</h4>
+  </div>
 </div>
-<div *ngIf="!loggedIn">
-  <h4>Please use a valid account to create reviews</h4>
+<br/>
+<button (click)="reloadUsers(); getReviews(); searchForUser();">Load Reviews</button>
+<div *ngFor="let review of reviews; index as i">
+    <div class="card">
+        <p>Course Name: {{review.courseName}}</p>
+        <p>Zip Code: {{review.zipCode}}</p>
+        <p>Review: {{review.review1}}</p>
+        <p *ngIf="review.userId !== undefined && users[review.userId-1] != undefined">Written by {{users[review.userId-1].name}}</p>
+        
+        <div *ngIf="loggedIn && review.userId == currentID">
+        <button (click)="editReview(review)">Edit</button>
+  
+        <button (click)="deleteReview(review)">Delete</button>
+
+        <div *ngIf="review.editMode">
+          <h3>Edit Review</h3>
+          <form (ngSubmit)="saveReview(review)">
+            <label>
+              Course Name:
+              <input type="text" [(ngModel)]="review.courseName" name="courseName" required>
+            </label>
+            <br>
+            <label>
+              Review Content:
+              <input type="text" [(ngModel)]="review.review1" name ="review1" required>
+            </label>
+            <br>
+            <label>
+              Zip Code:
+              <input type="text" [(ngModel)]="review.zipCode" name="zipCode" required>
+            </label>
+            <br>
+            <button type="submit">Save</button>
+            <button type="button" (click)="cancelEdit(review); getReviews();">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
 </div>
   
   

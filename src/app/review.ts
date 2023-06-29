@@ -1,8 +1,9 @@
 export interface Review {
     id?: number;
-    reviewContent: string;
+    review1: string;
     courseName: string;
     zipCode: string;
-    UserId?: number;
+    userId?: number;
+    editMode?: boolean;
   }
   

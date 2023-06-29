@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loggedIn!: boolean;
   foundUser: boolean = false;
   
-  newUser: User = { name:"", email:""};
+  newUser: User = { name:"", email:"", reviews:[]};
   users: User[] = [];
   constructor(private authService: SocialAuthService, private userService: UsersService) { }
  
