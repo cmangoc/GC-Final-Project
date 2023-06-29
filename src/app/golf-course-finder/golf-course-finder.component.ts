@@ -68,7 +68,7 @@ export class GolfCourseFinderComponent {
       return 'Closed'; // Return 'Closed' if the time is not available
     }
   
-    const [hours, minutes] = (time || '').split(':');
+    const [hours, minutes] = time.match(/\d{2}/g); 
     const formattedHours = parseInt(hours, 10) % 12 || 12;
     const period = parseInt(hours, 10) < 12 ? 'AM' : 'PM';
     return `${formattedHours}:${minutes || '00'} ${period}`;
